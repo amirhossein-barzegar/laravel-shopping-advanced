@@ -1,0 +1,117 @@
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/IRANSans_Medium.ttf");
+    src: url("../fonts/IRANSans_Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/IRANSans_Light.ttf");
+    src: url("../fonts/IRANSans_Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url("../fonts/IRANSans_UltraLight.ttf");
+    src: url("../fonts/IRANSans_UltraLight.ttf") format("truetype");
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/IRANSans.ttf");
+    src: url("../fonts/IRANSans.ttf") format("truetype");
+}
+
+body {
+    font-family: IRANSans, sans-serif !important;
+}
+
+#topSlider .swiper-pagination-bullet {
+    background: #1f2937;
+    transform: scale(0.9);
+}
+#topSlider .swiper-pagination-bullet-active {
+    background: #1f2937;
+    transform: scale(1.2);
+}
+
+.price-range-block {
+    margin: 30px;
+}
+.sliderText {
+    width: 42%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid red;
+    padding: 10px 0 10px 0px;
+    font-weight: bold;
+}
+.ui-slider-horizontal {
+    height: 6px;
+    width: 100%;
+    padding: 0 15px;
+    background: #e5e7eb;
+}
+.ui-widget-header {
+    background: #3fe331;
+}
+.price-range-search {
+    width: 41%;
+    background-color: #f9f9f9;
+    border: 1px solid #6e6666;
+    min-width: 40%;
+    display: inline-block;
+    height: 32px;
+    border-radius: 5px;
+    float: left;
+    font-size: 16px;
+}
+.price-range-field,
+.price-range-field:focus {
+    display: flex;
+    flex-grow: 1;
+    font-size: 24px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    letter-spacing: 1px;
+    appearance: none;
+    outline: none;
+    --tw-ring-shadow: none;
+    text-align: center;
+    color: #374151;
+}
+.ui-widget-content {
+    border: none !important;
+}
+.ui-slider-range {
+    height: 6px !important;
+    background: #06b6d4 !important;
+}
+
+.ui-slider span.ui-slider-handle {
+    top: -6px !important;
+    background: #06b6d4 !important;
+    width: 18px !important;
+    height: 18px !important;
+}
+
+.swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+[x-cloak] {
+    display: none !important;
+}
+
+input#min_price_range {
+    width: 50px;
+}
+input#max_price_range {
+    width: 50px;
+}
