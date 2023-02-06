@@ -21,6 +21,12 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('img_thumb',1000)->nullable();
+            $table->string('first_name')->nullable(); 
+            $table->string('last_name')->nullable(); 
+            $table->string('phone')->nullable(); 
+            $table->string('postal_code')->nullable(); 
+            $table->text('address')->nullable(); 
         });
     }
 
