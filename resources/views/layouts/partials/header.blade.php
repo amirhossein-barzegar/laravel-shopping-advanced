@@ -23,7 +23,7 @@
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="grow flex justify-end gap-3">
-            <form class="flex rounded-xl bg-gray-100 items-center grow md:grow-0 shrink flex-end focus-within:ring focus-within:ring-gray-200 duration-300">
+            <form class="hidden sm:flex rounded-xl bg-gray-100 items-center grow md:grow-0 shrink flex-end focus-within:ring focus-within:ring-gray-200 duration-300">
                 <button class="w-19 h-full w-12 grid place-items-center text-lg text-gray-500">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -65,6 +65,19 @@
             x-transition:leave-end="translate-x-full"
             class="fixed top-0 right-0 bottom-0 bg-white w-72 h-full shadow-lg"
         >
+            <button 
+                @click="mobileMenu = false"
+                class="fixed top-5 right-4 w-6 h-6 text-red-600 bg-white hover:shadow-sm transition-shadow duration-200 grid place-items-center rounded"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h4 class="text-center text-lg font-semibold text-rose-600 my-4">تاپکت</h4>
+            <form class="flex sm:hidden rounded-xl bg-gray-100 items-center grow md:grow-0 shrink flex-end focus-within:ring focus-within:ring-gray-200 duration-300 mx-4">
+                <button class="w-19 h-full w-12 grid place-items-center text-lg text-gray-500">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input type="text" placeholder="جستجو در تاپکت" class="bg-transparent p-3 grow border-none focus:ring-0 text-gray-500"/> 
+            </form>
             <nav>
                 <ul class="flex flex-col">
                     <li><a href="#" class="flex px-4 py-3 border-b border-gray-200 text-gray-500 hover:text-gray-800 transition-all duration-200">خانه</a></li>
@@ -99,7 +112,16 @@
             class="p-4 fixed top-0 left-0 bottom-0 bg-white w-72 h-full shadow-lg overflow-y-auto max-h-screen flex flex-col justify-between"
         >
         <div class="grid grid-cols-1 gap-3">
-                <h4 class="text-center text-sm font-[600] text-gray-800 mb-2">سبد خرید من</h4>
+                <button 
+                    @click="showCart = false"
+                    class="fixed top-4 left-4 w-6 h-6 text-red-600 bg-white hover:shadow-sm transition-shadow duration-200 grid place-items-center rounded"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h4 class="text-center text-sm font-[600] text-teal-600 mb-2">
+                    سبد خرید من
+                    <span class="font-normal">( 5 )</span>
+                </h4>
                 <a href="#" class="py-2 flex gap-3">
                     <img src="{{ asset('img/products/digital_1.jpg') }}" alt="" class="bg-gray-300 rounded-lg w-20 h-32 object-cover">
                     <div class="flex flex-col">
@@ -217,7 +239,7 @@
                     <span class="tracking-widest">2,350,000</span> 
                     <span class="text-xs tracking-[-0.07em]">تومان</span>
                 </div>
-                <button class="bg-green-600 text-white w-full py-2 mb-2 rounded-lg hover:bg-green-500 active:bg-green-600">Checkout</button>
+                <button class="bg-green-600 shadow-md hover:shadow-inner duration-300 transition-all text-white w-full py-2 mb-2 rounded-lg active:bg-green-600">ادامه فرآیند</button>
             </div>
         </div>
 
