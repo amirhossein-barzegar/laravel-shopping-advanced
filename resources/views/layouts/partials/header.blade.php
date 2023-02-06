@@ -7,7 +7,9 @@
 >
     <div class="container mx-auto px-3 py-2 flex items-center md:justify-between">
         <div class="hidden lg:flex items-center">
-            <img src="{{asset('img/logo.png')}}" alt="" class="h-12 w-28 px-4 object-cover">
+            <a href="{{url('/')}}">
+                <img src="{{asset('img/logo.png')}}" alt="" class="h-12 w-28 px-4 object-cover">
+            </a>
             <nav>
                 <ul class="flex items-center">
                     <li><a href="#" class="px-3 py-2 text-gray-500 hover:text-gray-800 transition-all duration-200">خانه</a></li>
@@ -33,12 +35,35 @@
                 @click="showCart = true"
                 class="relative bg-sky-50 text-sky-600 text-lg rounded-xl w-12 h-12 grid place-items-center"
             >
-                <span class="animate-bounce bg-red-600 font-semibold w-5 h-5 rounded-full text-xs text-white grid place-items-center absolute -top-1 -right-1 ring-4 ring-white">3</span>
+                <span class="animate-bounce bg-rose-500 font-semibold w-5 h-5 rounded-full text-xs text-white grid place-items-center absolute -top-0 -right-1 ring-4 ring-white">3</span>
                 <i class="fa-solid fa-cart-shopping"></i>
-            </button>   
-            <button class="bg-pink-50 text-pink-600 text-lg rounded-xl w-12 h-12 grid place-items-center">
+            </button>
+            @auth
+            <div class="relative group bg-pink-50 text-pink-600 text-lg rounded-xl w-12 h-12 grid place-items-center cursor-pointer">
+                <span class="bg-green-600 font-semibold w-3 h-3 rounded-full text-xs text-white grid place-items-center absolute top-0 right-0 ring-4 ring-white"></span>
                 <i class="fa-solid fa-user"></i>
-            </button>   
+                <ul class="flex flex-col w-36 text-center text-sm shadow py-3 rounded-xl absolute left-0 top-full opacity-0 invisible bg-white group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <li class="flex">
+                        <a href="#" class="w-full py-2 hover:bg-pink-50 transition-colors duration-200">
+                            پروفایل
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <form action="{{ route('logout') }}" method="POST" class="w-full">
+                            @csrf
+                            <button type="submit" class="w-full py-2 hover:bg-pink-50 transition-colors duration-200">
+                                خروج
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>  
+            @else
+            <a href="{{ route('login') }}" class="relative group bg-pink-50 text-pink-600 text-lg rounded-xl w-12 h-12 grid place-items-center">
+                <span class="bg-red-600 font-semibold w-3 h-3 rounded-full text-xs text-white grid place-items-center absolute top-0 right-0 ring-4 ring-white"></span>
+                <i class="fa-solid fa-user"></i>
+            </a> 
+            @endauth 
         </div>
 
                     
