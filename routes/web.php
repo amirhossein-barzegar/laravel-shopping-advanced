@@ -211,6 +211,14 @@ Route::get('variant-value/{id}/variant-type', function($id) {
 });
 
 
+/******************************************
+ * Livewire routes
+ */
+use App\Http\Livewire\Shop\ProductComponent;
+Route::get('/shop/{id}', ProductComponent::class)->name('shop.product');
+
+
+
 
 
 

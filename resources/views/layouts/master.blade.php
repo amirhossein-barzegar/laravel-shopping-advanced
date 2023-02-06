@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         @vite(['resources/css/app.css','resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="bg-sky-50">
         @include('layouts.partials.header')
@@ -24,6 +25,7 @@
             {{ $slot }}
         </main>
         @include('layouts.partials.footer')
+        @livewireScripts
         <script src="{{ asset('js/jquery-3.6.3.min.js') }}"></script>
         <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('js/price_range_script.js') }}"></script>
