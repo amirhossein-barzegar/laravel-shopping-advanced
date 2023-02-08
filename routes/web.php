@@ -225,6 +225,7 @@ Route::get('/shop/{id}', ProductComponent::class)->name('shop.product');
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\DiscountController;
 Route::middleware('adminaccess')->prefix('admin')->group(function() {
     Route::get('dashboard', function () {
         return view('admin.dashboard');
@@ -232,6 +233,7 @@ Route::middleware('adminaccess')->prefix('admin')->group(function() {
     Route::resource('product', ProductController::class);
     Route::resource('brand', BrandController::class);
     Route::resource('product-category', ProductCategoryController::class);
+    Route::resource('discount', DiscountController::class);
 });
 
 

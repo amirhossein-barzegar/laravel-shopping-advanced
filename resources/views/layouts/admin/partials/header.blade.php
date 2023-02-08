@@ -30,6 +30,12 @@
                             <li class="flex">
                                 <a href="{{ route('product-category.index') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">همه دسته بندی ها</a>
                             </li>
+                            <li class="flex">
+                                <a href="{{ route('discount.create') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">افزودن تخفیف</a>
+                            </li>
+                            <li class="flex">
+                                <a href="{{ route('discount.index') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">همه تخفیفات</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="relative group flex">
