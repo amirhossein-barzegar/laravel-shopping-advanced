@@ -219,6 +219,20 @@ Route::get('/shop/{id}', ProductComponent::class)->name('shop.product');
 
 
 
+/******************************************
+ * Admin Routes
+ */
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductCategoryController;
+Route::middleware('adminaccess')->prefix('admin')->group(function() {
+    Route::get('dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+    Route::resource('product', ProductController::class);
+    Route::resource('brand', BrandController::class);
+    Route::resource('product-category', ProductCategoryController::class);
+});
 
 
 

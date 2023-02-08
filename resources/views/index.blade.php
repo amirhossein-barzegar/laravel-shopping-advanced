@@ -35,8 +35,17 @@
                     <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                     <figure class="relative">
                         <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                        <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                        <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                             <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                            <button class="grid place-items-center grow">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <span class="grid place-items-center grow">1</span>
+                            <button class="grid place-items-center grow">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
                         </div>
                     </figure>
                     <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -63,8 +72,17 @@
                     <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                     <figure class="relative">
                         <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                        <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                        <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                             <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                            <button class="grid place-items-center grow">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <span class="grid place-items-center grow">1</span>
+                            <button class="grid place-items-center grow">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
                         </div>
                     </figure>
                     <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -91,36 +109,17 @@
                     <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                     <figure class="relative">
                         <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                        <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                        <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                             <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </figure>
-                    <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
-                    <div class="flex gap-1 items-center my-1">
-                        <i class="fa-regular fa-floppy-disk text-lg text-teal-500 grid place-items-center"></i>
-                        <span class="text-xs text-gray-600 tracking-tighter">موجود در انبار دیجی کالا</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <div class="bg-red-500 px-2 py-1 rounded-full text-xs font-bold w-fit text-white">
-                            20%
-                        </div>
-                        <div class="text-md font-[500] tracking-tight text-gray-600">
-                            2,000,000 <span class="tracking-[-0.1em] text-xs">تومان</span>
-                        </div>
-                    </div>
-                    <div class="text-xs line-through text-left py-1 ml-6 text-gray-400 ">
-                        2,500,000
-                    </div>
-                    <div class="text-xs text-gray-400 text-left">
-                        06:34:10
-                    </div>
-                </a>
-                <a href="#" class="bg-white rounded-lg p-3 w-40 h-80 shrink-0">
-                    <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
-                    <figure class="relative">
-                        <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                        <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
-                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                            <button class="grid place-items-center grow">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <span class="grid place-items-center grow">1</span>
+                            <button class="grid place-items-center grow">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
                         </div>
                     </figure>
                     <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -158,8 +157,17 @@
                             <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                             <figure class="relative">
                                 <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                                <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                                     <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -186,8 +194,17 @@
                             <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                             <figure class="relative">
                                 <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                                <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                                     <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -214,8 +231,17 @@
                             <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                             <figure class="relative">
                                 <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                                <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                                     <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -242,8 +268,17 @@
                             <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                             <figure class="relative">
                                 <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                                <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                                     <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -270,8 +305,17 @@
                             <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                             <figure class="relative">
                                 <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                                <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                                     <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -298,8 +342,17 @@
                             <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                             <figure class="relative">
                                 <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                                <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                                     <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
@@ -326,8 +379,128 @@
                             <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                             <figure class="relative">
                                 <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
-                                <div class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                                     <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                </div>
+                            </figure>
+                            <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
+                            <div class="flex gap-1 items-center my-1">
+                                <i class="fa-regular fa-floppy-disk text-lg text-teal-500 grid place-items-center"></i>
+                                <span class="text-xs text-gray-600 tracking-tighter">موجود در انبار دیجی کالا</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="bg-red-500 px-2 py-1 rounded-full text-xs font-bold w-fit text-white">
+                                    20%
+                                </div>
+                                <div class="text-md font-[500] tracking-tight text-gray-600">
+                                    2,000,000 <span class="tracking-[-0.1em] text-xs">تومان</span>
+                                </div>
+                            </div>
+                            <div class="text-xs line-through text-left py-1 ml-6 text-gray-400 ">
+                                2,500,000
+                            </div>
+                            <div class="text-xs text-gray-400 text-left">
+                                06:34:10
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide bg-white rounded-lg p-3 w-40 h-80 shrink-0">
+                            <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
+                            <figure class="relative">
+                                <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                </div>
+                            </figure>
+                            <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
+                            <div class="flex gap-1 items-center my-1">
+                                <i class="fa-regular fa-floppy-disk text-lg text-teal-500 grid place-items-center"></i>
+                                <span class="text-xs text-gray-600 tracking-tighter">موجود در انبار دیجی کالا</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="bg-red-500 px-2 py-1 rounded-full text-xs font-bold w-fit text-white">
+                                    20%
+                                </div>
+                                <div class="text-md font-[500] tracking-tight text-gray-600">
+                                    2,000,000 <span class="tracking-[-0.1em] text-xs">تومان</span>
+                                </div>
+                            </div>
+                            <div class="text-xs line-through text-left py-1 ml-6 text-gray-400 ">
+                                2,500,000
+                            </div>
+                            <div class="text-xs text-gray-400 text-left">
+                                06:34:10
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide bg-white rounded-lg p-3 w-40 h-80 shrink-0">
+                            <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
+                            <figure class="relative">
+                                <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                </div>
+                            </figure>
+                            <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
+                            <div class="flex gap-1 items-center my-1">
+                                <i class="fa-regular fa-floppy-disk text-lg text-teal-500 grid place-items-center"></i>
+                                <span class="text-xs text-gray-600 tracking-tighter">موجود در انبار دیجی کالا</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="bg-red-500 px-2 py-1 rounded-full text-xs font-bold w-fit text-white">
+                                    20%
+                                </div>
+                                <div class="text-md font-[500] tracking-tight text-gray-600">
+                                    2,000,000 <span class="tracking-[-0.1em] text-xs">تومان</span>
+                                </div>
+                            </div>
+                            <div class="text-xs line-through text-left py-1 ml-6 text-gray-400 ">
+                                2,500,000
+                            </div>
+                            <div class="text-xs text-gray-400 text-left">
+                                06:34:10
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide bg-white rounded-lg p-3 w-40 h-80 shrink-0">
+                            <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
+                            <figure class="relative">
+                                <img src="{{asset('img/products/digital_6.jpg')}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
+                                <button class="bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <span class="grid place-items-center grow">1</span>
+                                    <button class="grid place-items-center grow">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
                             </figure>
                             <h3 class="text-sm font-bold text-gray-600 tracking-tight">موبایل سامسونگ گلکسی مدل 97670</h3>
