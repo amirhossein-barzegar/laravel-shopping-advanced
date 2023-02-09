@@ -2,38 +2,49 @@
 
 namespace App\Http\Livewire\Home;
 
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 use App\Models\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
-class ProductsComponent extends Component
+class SpecialProductComponent extends Component
 {
-    public $products;
+    protected $listeners = [
+            'update-cart' => 'render'
+    ];
+
+    public $specialProducts = [];
 
     public $cart;
 
-    protected $listeners = ['update-cart' => 'render'];
-
     public function mount() {
-        $this->products = Product::with('discount')->orderBy('created_at', 'DESC')->get();
+        $this->specialProducts = Product::where('discount_id','>',0)->with('discount')->get();
         $this->cart = Cart::content();
-        foreach($this->products as $key => $item) {
+        foreach($this->specialProducts as $key => $item) {
             $cartItem = $this->cart->where('id',$item->id)->first();
             $item->cartItem = $cartItem;
-            $this->products[$key] = $item;
+            $this->specialProducts[$key] = $item;
         }
     }
 
     public function render()
     {
-        $cart = Cart::content();
         $this->cart = Cart::content();
-        foreach($this->products as $key => $item) {
+        foreach($this->specialProducts as $key => $item) {
             $cartItem = $this->cart->where('id',$item->id)->first();
             $item->cartItem = $cartItem;
-            $this->products[$key] = $item;
+            $this->specialProducts[$key] = $item;
         }
-        return view('livewire.home.products-component',compact('cart'));
+        return view('livewire.home.special-product-component');
+    }
+
+    public function updateCart() {
+        $this->specialProducts = Product::where('discount_id','>',0)->with('discount')->get();
+        $this->cart = Cart::content();
+        foreach($this->specialProducts as $item) {
+            $cartItem = $this->cart->where('id',$item->id)->first();
+            $item->cartItem = $cartItem;
+            $this->specialProducts[$item->id] = $item;
+        }
     }
 
     public function addToCart($id, $name, $qty, $price) {
@@ -74,10 +85,5 @@ class ProductsComponent extends Component
             Cart::update($rowId,$qty);
             $this->emit('update-cart');
         }
-    }
-
-    public function removeCart($rowId) {
-        Cart::remove($rowId);
-        $this->emit('update-cart');
     }
 }

@@ -35,7 +35,9 @@
                 @click="showCart = true"
                 class="relative bg-sky-50 text-sky-600 text-lg rounded-xl w-12 h-12 grid place-items-center"
             >
-                <span class="animate-bounce bg-rose-500 font-semibold w-5 h-5 rounded-full text-xs text-white grid place-items-center absolute -top-0 -right-1 ring-4 ring-white">3</span>
+                <span class="animate-bounce bg-rose-500 font-semibold w-5 h-5 rounded-full text-xs text-white grid place-items-center absolute -top-0 -right-1 ring-4 ring-white">
+                    @livewire('shop.cart-counter')
+                </span>
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
             @auth
@@ -124,7 +126,8 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
-        class="bg-gray-900 bg-opacity-50 w-full h-full fixed top-0 left-0 right-0">
+        class="bg-gray-900 bg-opacity-50 w-full h-full fixed top-0 left-0 right-0"
+    >
         <div
             x-cloak
             x-show="showCart"
@@ -136,136 +139,7 @@
             x-transition:leave-end="-translate-x-full"
             class="p-4 fixed top-0 left-0 bottom-0 bg-white w-72 h-full shadow-lg overflow-y-auto max-h-screen flex flex-col justify-between"
         >
-        <div class="grid grid-cols-1 gap-3">
-                <button 
-                    @click="showCart = false"
-                    class="fixed top-4 left-4 w-6 h-6 text-red-600 bg-white hover:shadow-sm transition-shadow duration-200 grid place-items-center rounded"
-                >
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <h4 class="text-center text-sm font-[600] text-teal-600 mb-2">
-                    سبد خرید من
-                    <span class="font-normal">( 5 )</span>
-                </h4>
-                <a href="#" class="py-2 flex gap-3">
-                    <img src="{{ asset('img/products/digital_1.jpg') }}" alt="" class="bg-gray-300 rounded-lg w-20 h-32 object-cover">
-                    <div class="flex flex-col">
-                        <h5 class="text-sm text-gray-700 font-semibold py-1 leading-6">لپ تاپ گیمینگ DELL مدل i7</h5>
-                        <div class="my-1">
-                            <small class="text-gray-700 tracking-wider">2,100,000</small>
-                            <small class="text-gray-400 line-through text-xs tracking-wider">2,100,000</small>
-                        </div> 
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-2">
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-plus"></i></button>
-                                <span class="text-gray-600">1</span>
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-minus"></i></button>
-                            </div>
-                            <button class="text-white bg-red-500 active:bg-red-600 w-8 h-8 rounded-full text-sm">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>                  
-                    </div>
-                </a>
-                <a href="#" class="py-2 flex gap-3">
-                    <img src="{{ asset('img/products/digital_2.jpg') }}" alt="" class="bg-gray-300 rounded-lg w-20 h-32 object-cover">
-                    <div class="flex flex-col">
-                        <h5 class="text-sm text-gray-700 font-semibold py-1 leading-6">لپ تاپ گیمینگ DELL مدل i7</h5>
-                        <div class="my-1">
-                            <small class="text-gray-700 tracking-wider">2,100,000</small>
-                            <small class="text-gray-400 line-through text-xs tracking-wider">2,100,000</small>
-                        </div> 
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-2">
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-plus"></i></button>
-                                <span class="text-gray-600">1</span>
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-minus"></i></button>
-                            </div>
-                            <button class="text-white bg-red-500 active:bg-red-600 w-8 h-8 rounded-full text-sm">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>                  
-                    </div>
-                </a>
-                <a href="#" class="py-2 flex gap-3">
-                    <img src="{{ asset('img/products/digital_3.jpg') }}" alt="" class="bg-gray-300 rounded-lg w-20 h-32 object-cover">
-                    <div class="flex flex-col">
-                        <h5 class="text-sm text-gray-700 font-semibold py-1 leading-6">لپ تاپ گیمینگ DELL مدل i7</h5>
-                        <div class="my-1">
-                            <small class="text-gray-700 tracking-wider">2,100,000</small>
-                            <small class="text-gray-400 line-through text-xs tracking-wider">2,100,000</small>
-                        </div> 
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-2">
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-plus"></i></button>
-                                <span class="text-gray-600">1</span>
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-minus"></i></button>
-                            </div>
-                            <button class="text-white bg-red-500 active:bg-red-600 w-8 h-8 rounded-full text-sm">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>                  
-                    </div>
-                </a>
-                <a href="#" class="py-2 flex gap-3">
-                    <img src="{{ asset('img/products/digital_4.jpg') }}" alt="" class="bg-gray-300 rounded-lg w-20 h-32 object-cover">
-                    <div class="flex flex-col">
-                        <h5 class="text-sm text-gray-700 font-semibold py-1 leading-6">لپ تاپ گیمینگ DELL مدل i7</h5>
-                        <div class="my-1">
-                            <small class="text-gray-700 tracking-wider">2,100,000</small>
-                            <small class="text-gray-400 line-through text-xs tracking-wider">2,100,000</small>
-                        </div> 
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-2">
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-plus"></i></button>
-                                <span class="text-gray-600">1</span>
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-minus"></i></button>
-                            </div>
-                            <button class="text-white bg-red-500 active:bg-red-600 w-8 h-8 rounded-full text-sm">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>                  
-                    </div>
-                </a>
-                <a href="#" class="py-2 flex gap-3">
-                    <img src="{{ asset('img/products/digital_5.jpg') }}" alt="" class="bg-gray-300 rounded-lg w-20 h-32 object-cover">
-                    <div class="flex flex-col">
-                        <h5 class="text-sm text-gray-700 font-semibold py-1 leading-6">لپ تاپ گیمینگ DELL مدل i7</h5>
-                        <div class="my-1">
-                            <small class="text-gray-700 tracking-wider">2,100,000</small>
-                            <small class="text-gray-400 line-through text-xs tracking-wider">2,100,000</small>
-                        </div> 
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-2">
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-plus"></i></button>
-                                <span class="text-gray-600">1</span>
-                                <button class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300"><i class="fa-solid fa-minus"></i></button>
-                            </div>
-                            <button class="text-white bg-red-500 active:bg-red-600 w-8 h-8 rounded-full text-sm">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>                  
-                    </div>
-                </a>
-            </div>
-            <div class="bg-white h-24 w-full px-2 py-3">
-                <div class="pb-2 text-sm text-gray-600">
-                    جمع کل : 
-                    <span class="tracking-widest">2,300,000</span> 
-                    <span class="text-xs tracking-[-0.07em]">تومان</span>
-                </div>
-                <div class="pb-2 text-sm text-gray-600">
-                    هزینه ارسال : 
-                    <span class="tracking-widest">50,000</span> 
-                    <span class="text-xs tracking-[-0.07em]">تومان</span>
-                </div>
-                <div class="pb-2 text-sm font-semibold text-gray-800">
-                    مبلغ قابل پرداخت : 
-                    <span class="tracking-widest">2,350,000</span> 
-                    <span class="text-xs tracking-[-0.07em]">تومان</span>
-                </div>
-                <button class="bg-green-600 shadow-md hover:shadow-inner duration-300 transition-all text-white w-full py-2 mb-2 rounded-lg active:bg-green-600">ادامه فرآیند</button>
-            </div>
+            @livewire('shop.cart-items')
         </div>
 
     </div>

@@ -215,7 +215,10 @@ Route::get('variant-value/{id}/variant-type', function($id) {
  * Livewire routes
  */
 use App\Http\Livewire\Shop\ProductComponent;
+use App\Http\Livewire\Shop\ProductCategoryComponent;
+
 Route::get('/shop/{id}', ProductComponent::class)->name('shop.product');
+Route::get('/product-category/{slug}', ProductCategoryComponent::class)->name('shop.product.category');
 
 
 
@@ -235,6 +238,8 @@ Route::middleware('adminaccess')->prefix('admin')->group(function() {
     Route::resource('product-category', ProductCategoryController::class);
     Route::resource('discount', DiscountController::class);
 });
+
+
 
 
 

@@ -62,6 +62,10 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function productComments() {
+        return $this->hasMany(ProductComment::class);
+    }
+
     public function products() {
         return $this->hasMany(Product::class,'seller_id');
     }

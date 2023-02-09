@@ -12,7 +12,7 @@
         @click.self="{{$trigger}}=false" 
         x-show="{{$trigger}}" 
         x-cloak
-        class="flex w-full min-h-screen bg-gray-900 bg-opacity-50 fixed top-0 left-0 bottom-0 right-0"
+        class="z-50 flex w-full min-h-screen bg-gray-900 bg-opacity-50 fixed top-0 left-0 bottom-0 right-0"
     >
         <div 
             x-transition:enter="transition ease-out duration-100"

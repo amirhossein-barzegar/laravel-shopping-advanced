@@ -19,7 +19,7 @@
         @vite(['resources/css/app.css','resources/js/app.js'])
         @livewireStyles
     </head>
-    <body class="bg-sky-50">
+    <body class="bg-zinc-50">
         @include('layouts.partials.header')
         <main class="mt-16">
             {{ $slot }}

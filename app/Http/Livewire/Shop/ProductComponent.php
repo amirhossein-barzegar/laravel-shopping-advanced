@@ -13,7 +13,7 @@ class ProductComponent extends Component
     }
     public function render()
     {
-        $product = Product::find($this->productId);
+        $product = Product::where('id',$this->productId)->with('seller')->first();
         $img_gallery = $this->getImgGallery($product);        
         return view('livewire.shop.product-component', compact('product','img_gallery'))->layout('layouts.master');
     }
