@@ -5,11 +5,13 @@ namespace App\Http\Livewire\Home;
 use Livewire\Component;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Nette\Utils\DateTime;
 
 class SpecialProductComponent extends Component
 {
     protected $listeners = [
-            'update-cart' => 'render'
+            'update-cart' => 'render',
+            'update-time' => 'calculateTime'
     ];
 
     public $specialProducts = [];
@@ -17,13 +19,14 @@ class SpecialProductComponent extends Component
     public $cart;
 
     public function mount() {
-        $this->specialProducts = Product::where('discount_id','>',0)->with('discount')->get();
+        $this->specialProducts = Product::where('discount_id','>',0)->with('discount')->inRandomOrder()->get();
         $this->cart = Cart::content();
         foreach($this->specialProducts as $key => $item) {
             $cartItem = $this->cart->where('id',$item->id)->first();
             $item->cartItem = $cartItem;
             $this->specialProducts[$key] = $item;
         }
+        $this->calculateTime();
     }
 
     public function render()
@@ -85,5 +88,17 @@ class SpecialProductComponent extends Component
             Cart::update($rowId,$qty);
             $this->emit('update-cart');
         }
+    }
+
+    public function calculateTime() {
+        foreach($this->specialProducts as $item) {
+            $start_time = new DateTime(now());//start time
+            $expire_time = new DateTime($item->discount->expire_time);//end time
+            $remaining_time = $start_time->diff($expire_time);
+            $item->discount->remainingTime = $remaining_time;
+            $this->specialProducts[$item->id] = $item;
+            $item->discount->remainingTimeMessage = $remaining_time->format('%D:%H:%i:%S');
+        }
+        $this->dispatchBrowserEvent('contentChanged');
     }
 }

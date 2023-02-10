@@ -8,7 +8,7 @@
     <div class="container mx-auto px-3 py-2 flex items-center md:justify-between">
         <div class="hidden lg:flex items-center">
             <a href="{{url('/')}}">
-                <img src="{{asset('img/logo.png')}}" alt="" class="h-12 w-28 px-4 object-cover">
+                <img src="{{asset('img/logo.png')}}" alt="" class="h-12 w-28 px-4 object-contain">
             </a>
             <nav>
                 <ul class="flex items-center">
@@ -45,6 +45,13 @@
                 <span class="bg-green-600 font-semibold w-3 h-3 rounded-full text-xs text-white grid place-items-center absolute top-0 right-0 ring-4 ring-white"></span>
                 <i class="fa-solid fa-user"></i>
                 <ul class="flex flex-col w-36 text-center text-sm shadow py-3 rounded-xl absolute left-0 top-full opacity-0 invisible bg-white group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    @can('admin_user')
+                    <li class="flex">
+                        <a href="{{ route('admin.dashboard') }}" class="w-full py-2 hover:bg-pink-50 transition-colors duration-200">
+                            داشبورد مدیریت
+                        </a>
+                    </li>
+                    @endcan
                     <li class="flex">
                         <a href="#" class="w-full py-2 hover:bg-pink-50 transition-colors duration-200">
                             پروفایل

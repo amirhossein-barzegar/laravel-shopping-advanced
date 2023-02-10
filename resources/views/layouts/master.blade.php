@@ -30,8 +30,13 @@
         <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('js/price_range_script.js') }}"></script>
         <script src="{{ asset('js/xzoom.js') }}"></script>
-        <script>            
-            const topSlider = new Swiper('#topSlider', {
+        <script>
+            // window.addEventListener('contentChanged', event => {
+            //     intializeScripts();
+            // });
+
+            function intializeScripts() {
+                const topSlider = new Swiper('#topSlider', {
                 // Optional parameters
                 loop: true,
                 breakpointsBase: 'container',
@@ -55,95 +60,99 @@
                 pagination: {
                     el: '#topSliderPaginate',
                 },
-            });
-
-            const specialSlider = new Swiper('#specialSlider', {
-                // Optional parameters
-                breakpoints: {
-                    768: {
-                        slidesPerView: 4,
-                        spaceBetween: 15,
-                    },
-                    992: {
-                        slidesPerView: 4,
-                        spaceBetween: 15,
-                    },
-                    1024: {
-                        slidesPerView: 5,
-                        spaceBetween: 15,
-                    },
-                    1280: {
-                        slidesPerView: 6,
-                        spaceBetween: 15,
-                    },
-                    1536: {
-                        slidesPerView: 7,
-                        spaceBetween: 15,
-                    }
-                },
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-                // Navigation arrows
-                navigation: {
-                    nextEl: '#specialSliderBtnLeft',
-                    prevEl: '#specialSliderBtnRight',
-                },
-            });
-
-
-
-            /**
-             * Product Image slider
-             */
-            (function ($) {
-                $(document).ready(function() {
-                    $('.image_preview, .prd_img_list').xzoom({
-                        // position:'#lensProduct',
-                        tint: '#ffa200',
-                        // lensClass:'customLensProduct',
-                        fadeOut:true,
-                        activeClass:'ring-2 ring-cyan-700',
-                        // zoomClass:'product_preview',
-                        scroll: false
-                    });
-                    //Integration with hammer.js
-                    var isTouchSupported = 'ontouchstart' in window;
-                    if (isTouchSupported) {
-                        //If touch device
-                        $('.image_preview').each(function(){
-                            var xzoom = $(this).data('xzoom');
-                            xzoom.eventunbind();
-                        });
-                        
-                        $('.image_preview').each(function() {
-                            var xzoom = $(this).data('xzoom');
-                            $(this).hammer().on("tap", function(event) {
-                                event.pageX = event.gesture.center.pageX;
-                                event.pageY = event.gesture.center.pageY;
-                                var s = 1, ls;
-                
-                                xzoom.eventmove = function(element) {
-                                    element.hammer().on('drag', function(event) {
-                                        event.pageX = event.gesture.center.pageX;
-                                        event.pageY = event.gesture.center.pageY;
-                                        xzoom.movezoom(event);
-                                        event.gesture.preventDefault();
-                                    });
-                                }
-                
-                                xzoom.eventleave = function(element) {
-                                    element.hammer().on('tap', function(event) {
-                                        xzoom.closezoom();
-                                    });
-                                }
-                                xzoom.openzoom(event);
-                            });
-                        });
-
-                    }
                 });
-            })(jQuery);
 
+                const specialSlider = new Swiper('#specialSlider', {
+                    // Optional parameters
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 15,
+                        },
+                        992: {
+                            slidesPerView: 4,
+                            spaceBetween: 15,
+                        },
+                        1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 15,
+                        },
+                        1280: {
+                            slidesPerView: 6,
+                            spaceBetween: 15,
+                        },
+                        1536: {
+                            slidesPerView: 7,
+                            spaceBetween: 15,
+                        }
+                    },
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '#specialSliderBtnLeft',
+                        prevEl: '#specialSliderBtnRight',
+                    },
+                });
+
+
+
+                /**
+                 * Product Image slider
+                 */
+                (function ($) {
+                    $(document).ready(function() {
+                        $('.image_preview, .prd_img_list').xzoom({
+                            // position:'#lensProduct',
+                            tint: '#ffa200',
+                            // lensClass:'customLensProduct',
+                            fadeOut:true,
+                            activeClass:'ring-2 ring-cyan-700',
+                            // zoomClass:'product_preview',
+                            scroll: false
+                        });
+                        //Integration with hammer.js
+                        var isTouchSupported = 'ontouchstart' in window;
+                        if (isTouchSupported) {
+                            //If touch device
+                            $('.image_preview').each(function(){
+                                var xzoom = $(this).data('xzoom');
+                                xzoom.eventunbind();
+                            });
+                            
+                            $('.image_preview').each(function() {
+                                var xzoom = $(this).data('xzoom');
+                                $(this).hammer().on("tap", function(event) {
+                                    event.pageX = event.gesture.center.pageX;
+                                    event.pageY = event.gesture.center.pageY;
+                                    var s = 1, ls;
+                    
+                                    xzoom.eventmove = function(element) {
+                                        element.hammer().on('drag', function(event) {
+                                            event.pageX = event.gesture.center.pageX;
+                                            event.pageY = event.gesture.center.pageY;
+                                            xzoom.movezoom(event);
+                                            event.gesture.preventDefault();
+                                        });
+                                    }
+                    
+                                    xzoom.eventleave = function(element) {
+                                        element.hammer().on('tap', function(event) {
+                                            xzoom.closezoom();
+                                        });
+                                    }
+                                    xzoom.openzoom(event);
+                                });
+                            });
+
+                        }
+                    });
+                })(jQuery);
+            }
+
+            $(document).ready(function() {
+                intializeScripts();
+            });
         </script>
     </body>
 </html>

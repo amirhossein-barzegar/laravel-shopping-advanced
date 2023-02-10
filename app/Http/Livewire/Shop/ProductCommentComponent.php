@@ -14,9 +14,13 @@ class ProductCommentComponent extends Component
         'description' => 'required|min:10|string'
     ];
 
+    protected $listeners = [
+        'comment-created' => 'render'
+    ];
+
     public $title = "";
     public $description = "";
-    public $reply_id = 0;
+    public $reply_id = null;
 
     public $product;
 
@@ -25,7 +29,7 @@ class ProductCommentComponent extends Component
     }
     public function render()
     {
-        $comments = ProductComment::where('product_id',$this->product->id)->where('reply_id',0)->with('user','product')->get();
+        $comments = ProductComment::where('product_id',$this->product->id)->where('reply_id',null)->with('user','product')->get();
         return view('livewire.shop.product-comment-component',compact('comments'));
     }
 
@@ -44,6 +48,7 @@ class ProductCommentComponent extends Component
 
         session()->flash('success','نظر شما با موفقیت ثبت گردید');
         $this->reset(['title','description','reply_id']);
+        $this->emit('comment-created');
     }
 
     

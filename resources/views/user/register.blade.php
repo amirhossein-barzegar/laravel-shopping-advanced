@@ -1,8 +1,10 @@
 <x-guest-layout>
 <main class="flex flex-col min-h-screen justify-center items-center">
     <div class="w-96 bg-white m-auto shadow rounded-xl">
-        <img src="{{asset('img/logo.png')}}" alt="" class="w-20 h-16 object-cover text-center mx-auto py-4">
-        @if($errors->count() > 0 )
+            <a href="{{ url('/') }}">
+                <img src="{{asset('img/logo.png')}}" alt="" class="w-20 h-16 object-contain text-center mx-auto mt-4 mb-2">
+            </a>    
+            @if($errors->count() > 0 )
             @foreach($errors as $error)
                 {{$error}}
             @endforeach

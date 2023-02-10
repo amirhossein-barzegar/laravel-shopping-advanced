@@ -1,9 +1,9 @@
 <x-guest-layout>
 <main class="flex flex-col min-h-screen justify-center items-center">
     <div class="w-96 bg-white m-auto shadow rounded-xl">
-    <a href="{{ url('/') }}">
-        <img src="{{asset('img/logo.png')}}" alt="" class="w-20 h-16 object-cover text-center mx-auto py-4">
-    </a>    
+        <a href="{{ url('/') }}">
+            <img src="{{asset('img/logo.png')}}" alt="" class="w-20 h-16 object-contain text-center mx-auto mt-4 mb-2">
+        </a>   
         <form action="{{ route('login') }}" method="post" class="flex flex-col py-2 px-4 gap-2">
             @csrf
             <h3 class="text-2xl text-center text-blue-900">خوش برگشتید!</h3>

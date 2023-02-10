@@ -8,7 +8,7 @@
                     <small class="text-gray-500 text-xs"><i class="fa-solid fa-chevron-left"></i></small> 
                     <ul>
                         <li class="flex gap-4 text-sm items-center">
-                            <a href="{{ route('product-category.index') }}" class="text-gray-600 text-sm">همه دسته بندی ها</a>
+                            <a href="{{ route('post-category.index') }}" class="text-gray-600 text-sm">همه دسته بندی ها</a>
                             <small class="text-gray-500 text-xs"><i class="fa-solid fa-chevron-left"></i></small> 
                             <ul>
                                 <li>
@@ -32,31 +32,31 @@
                     </p>
                 </div>
             </div>
-            <form action="{{ route('product-category.update', $productCategory->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('post-category.update', $postCategory->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="flex flex-col gap-1 mt-2 ">
                     <label for="name" class="text-sm font-medium text-gray-900">نام دسته بندی : </label>
-                    <input type="text" value="{{ $productCategory->name }}" name="name" id="name" class="outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200" required autofocus>
+                    <input type="text" value="{{ $postCategory->name }}" name="name" id="name" class="outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200" required autofocus>
                     <x-input-error :messages="$errors->get('name')"/>
                 </div>
                 <div class="flex flex-col gap-1 mt-2 ">
                     <label for="description" class="text-sm font-medium text-gray-900">توضیحات کامل : </label>
-                    <textarea name="description" id="description" cols="30" rows="10" class="outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200">{{ $productCategory->description }}</textarea>
+                    <textarea name="description" id="description" cols="30" rows="10" class="outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200">{{ $postCategory->description }}</textarea>
                     <x-input-error :messages="$errors->get('description')"/>
                 </div>
                 <div class="flex flex-col gap-1 mt-2 ">
                     <label for="slug" class="text-sm font-medium text-gray-900">مسیر دسته بندی : </label>
-                    <input type="text" value="{{ $productCategory->slug }}" name="slug" id="slug" class="outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200" required>
+                    <input type="text" value="{{ $postCategory->slug }}" name="slug" id="slug" class="outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200" required>
                     <x-input-error :messages="$errors->get('slug')"/>
                 </div>
                 <div class="flex flex-col gap-1 mt-2 ">
                     <label for="img_thumb" class="text-sm font-medium text-gray-900">تصویر شاخص دسته بندی : </label>
                     <input type="file" value="{{ old('img_thumb') }}" name="img_thumb" id="img_thumb" class="outline-none py-2 text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-gray-50 focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200" aria-describedby="file_input_help">
                     <x-input-error :messages="$errors->get('img_thumb')"/>
-                    @if ($productCategory->img_thumb)
+                    @if ($postCategory->img_thumb)
                     <div class="flex overflow-x-auto mx-auto">
-                        <img src="{{ asset($productCategory->img_thumb) }}" alt="" class="h-20 m-auto">
+                        <img src="{{ asset($postCategory->img_thumb) }}" alt="" class="h-20 m-auto">
                     </div>
                     @endif
                 </div>
@@ -66,11 +66,11 @@
                     </label>
                     <select id="category" name="parent_id" class="px-4 py-2 outline-none bg-left bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200">
                         <option value selected>بدون والد</option>
-                    @foreach($productCategories as $category)
-                        @if($category->id === $productCategory->id)
+                    @foreach($postCategories as $category)
+                        @if($category->id === $postCategory->id)
                         @continue
                         @endif
-                        <option value="{{ $category->id }}" {{ $category->id === $productCategory->parent_id?'selected':''}}>{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{ $category->id === $postCategory->parent_id?'selected':''}}>{{ $category->name }}</option>
                     @endforeach
                     </select>
                 </div>

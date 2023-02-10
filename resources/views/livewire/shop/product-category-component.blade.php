@@ -3,17 +3,16 @@
         {{session()->get('success')}}
     </x-modal-message>
     <div class="flex justify-between items-center">
-        <div class="flex text-gray-600 items-center px-4">
-            <i class="fa-solid fa-store text-4xl text-gray-500"></i>
-            <h2 class="text-xl font-bold mr-4">جدید ترین محصولات</h2>
+        <div class="flex flex-col text-gray-600 items-center px-4 gap-2 mb-2">
+            <div class="flex w-fit items-center ml-auto">
+                <i class="fa-solid fa-list text-4xl"></i>
+                <h2 class="text-xl font-bold mr-4">دسته بندی : {{$productsCategory->name}}</h2>
+            </div>
+            <small class="text-gray-500 text-justify">{{$productsCategory->description}}</small>
         </div>
-        <a href="" class="transition-all duration-300 text-gray-500 rounded-xl px-6 py-2 flex items-center">
-            <span class="ml-2">بریم به فروشگاه</span>
-            <i class="fa-solid fa-arrow-left-long"></i>
-        </a>
     </div>
     <div class="py-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-        @foreach($products as $product)
+        @foreach($categoryProducts as $product)
         <a wire:key="{{$product->id}}" href="{{ route('shop.product', $product->id) }}" class="bg-white shadow hover:shadow-lg transition-all duration-300 rounded-lg p-3 h-80 shrink-0">
             <figure class="relative">
                 @if($product->discount && $product->discount->amount > 0)
@@ -21,7 +20,7 @@
                     {{$product->discount->amount}}%
                 </div>
                 @endif
-                <img src="{{ $product->img_thumb }}" alt="" class="rounded-lg w-full h-40 object-cover mt-1 mb-3">
+                <img src="{{ asset($product->img_thumb) }}" alt="" class="rounded-lg w-full h-40 object-cover mt-1 mb-3">
                 @if($cart->where('id',$product->id)->count())
                     <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
                         <button wire:loading.attr="disabled" wire:click.prevent="incrementCart('{{$product->cartItem->rowId}}')" class="grid place-items-center grow">

@@ -21,7 +21,7 @@
                     {{$product->discount->amount}}%
                 </div>
                 @endif
-                <img src="{{ $product->img_thumb }}" alt="" class="rounded-lg w-full h-40 object-cover mt-1 mb-3">
+                <img src="{{ asset($product->img_thumb) }}" alt="" class="rounded-lg w-full h-40 object-cover mt-1 mb-3">
                 @if($cart->where('id',$product->id)->count())
                     <div class="flex items-center bg-white rounded-full border border-red-600 text-red-600 h-8 w-20 absolute bottom-3 right-3 ">
                         <button wire:loading.attr="disabled" wire:click.prevent="incrementCart('{{$product->cartItem->rowId}}')" class="grid place-items-center grow">

@@ -216,9 +216,11 @@ Route::get('variant-value/{id}/variant-type', function($id) {
  */
 use App\Http\Livewire\Shop\ProductComponent;
 use App\Http\Livewire\Shop\ProductCategoryComponent;
+use App\Http\Livewire\Post\PostComponent;
 
 Route::get('/shop/{id}', ProductComponent::class)->name('shop.product');
 Route::get('/product-category/{slug}', ProductCategoryComponent::class)->name('shop.product.category');
+Route::get('/posts/{slug}', PostComponent::class)->name('post');
 
 
 
@@ -229,6 +231,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 Route::middleware('adminaccess')->prefix('admin')->group(function() {
     Route::get('dashboard', function () {
         return view('admin.dashboard');
@@ -237,6 +241,8 @@ Route::middleware('adminaccess')->prefix('admin')->group(function() {
     Route::resource('brand', BrandController::class);
     Route::resource('product-category', ProductCategoryController::class);
     Route::resource('discount', DiscountController::class);
+    Route::resource('post', PostController::class);
+    Route::resource('post-category', CategoryController::class);
 });
 
 

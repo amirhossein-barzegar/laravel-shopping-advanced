@@ -39,7 +39,7 @@ class ProductCategoryController extends Controller
 
         $productCategory->save();
 
-        return redirect()->route('product-category.index')->with('success', 'دسته بندی محصول با موفقیت ایجاد شد!');
+        return redirect()->route('product-category.index')->with('success', 'دسته بندی پست با موفقیت ایجاد شد!');
     }
 
     public function show($id) {
@@ -60,8 +60,8 @@ class ProductCategoryController extends Controller
             $time = time();
             $ext = $img_thumb->getClientOriginalExtension();
             $newName = $time.'.'.$ext;
-            $img_thumb->move('images/products',$newName);
-            $thumbUrl = 'images/products/'.$newName;
+            $img_thumb->move('images/product-categories',$newName);
+            $thumbUrl = 'images/product-categories/'.$newName;
             if (file_exists($productCategory->img_thumb)) {
                 unlink($productCategory->img_thumb);
             }
@@ -80,6 +80,6 @@ class ProductCategoryController extends Controller
     public function destroy($id) {
         $productCategory = ProductCategory::findOrFail($id);
         $productCategory->delete();
-        return redirect()->route('product-category.index')->with('success', 'دسته بندی محصول با موفقیت حذف گردید!');
+        return redirect()->route('product-category.index')->with('success', 'دسته بندی پست با موفقیت حذف گردید!');
     }
 }

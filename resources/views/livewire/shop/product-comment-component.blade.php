@@ -1,13 +1,10 @@
 <div 
     class="grid grid-cols-12"
-    x-data="{
-        modalShow: {{session()->has('success') ? 'true':'false'}}
-    }"
 >
     @auth
     <form @submit.prevent="modalShow=true" wire:submit.prevent="addProductComment({{$product->id}})" action="" class="mb-4 col-span-12 lg:col-span-6">
         @csrf
-        @if($reply_id!=0)
+        @if($reply_id!=null)
         <div class="flex gap-4 bg-gray-100 p-4 text-sm rounded-lg">
             <div class="flex items-center gap-2 text-gray-700">
                 <button wire:click.prevent="resetReplyComment" class="text-red-500 text-xl ml-2">
@@ -37,7 +34,10 @@
             <x-input-error :messages="$errors->get('description')"/>
         </div>
         <div class="flex flex-col gap-1 mt-2">
-            <button class="flex items-center justify-center text-sm gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 outline-none rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200">ثبت نظر</button>
+            <button wire:loading.attr="disabled" wire:target="addProductComment({{$product->id}})" class="flex items-center justify-center text-sm gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 outline-none rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200">
+                <span wire:loading.remove wire:target="addProductComment({{$product->id}})">ثبت نظر</span>
+                <span wire:loading wire:target="addProductComment({{$product->id}})" class="animate-spin bg-transparent border-t-2 border-l-2 border-r-2 border-b-2 rounded-full w-5 h-5 border-white group-hover:border-white border-b-transparent group-hover:border-b-transparent"></span>
+            </button>
         </div>
     </form>
     @else
@@ -56,8 +56,6 @@
                     </h4>
                     <p class="text-sm font-gray-700 leading-relaxed">
                         {{$comment->description}}
-                        این محصول برخلاف انچه که ازش انتظار داشتم خیلی ضعیف بوده و کیفیت دوربین قابل توجهی ندارد!
-                        این محصول برخلاف انچه که ازش انتظار داشتم خیلی ضعیف بوده و کیفیت دوربین قابل توجهی ندارد!
                     </p>
                 </div>
                 <a href="#form" wire:click="setReplyId('{{$comment->id}}')" class="absolute top-2 left-2 text-slate-600 hover:bg-slate-200 transition-colors duration-300 text-sm rounded-full grid place-items-center w-8 h-8">
@@ -175,8 +173,8 @@
                 </div>
             </div>
         </div> -->
-        <x-modal-message trigger="modalShow">
+        <!-- <x-modal-message trigger="modalShow">
             {{session()->get('success')}}
-        </x-modal-message>
+        </x-modal-message> -->
     </div>
 </div>

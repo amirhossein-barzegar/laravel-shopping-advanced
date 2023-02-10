@@ -30,17 +30,17 @@
                 </div>
                 <div class="flex justify-between">
                     <div class="flex items-center gap-2">
-                        <button wire:click.prevent="incrementCart('{{$item->rowId}}')" class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300 grid place-items-center">
+                        <button wire:loading.attr="disabled" wire:click.prevent="incrementCart('{{$item->rowId}}')" class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300 grid place-items-center">
                             <i wire:loading.remove wire:target="incrementCart('{{$item->rowId}}')" class="fa-solid fa-plus"></i>
                             <span wire:loading wire:target="incrementCart('{{$item->rowId}}')" class="animate-spin bg-transparent border-t-2 border-l-2 border-r-2 border-b-2 rounded-full w-4 h-4 border-gray-600 group-hover:border-white border-b-transparent group-hover:border-b-transparent"></span>
                         </button>
                         <span class="text-gray-600">{{$item->qty}}</span>
-                        <button wire:click.prevent="decrementCart('{{$item->rowId}}')" class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300 grid place-items-center">
+                        <button wire:loading.attr="disabled" wire:click.prevent="decrementCart('{{$item->rowId}}')" class="text-gray-600 bg-gray-200 w-8 h-8 rounded-full text-sm active:bg-gray-300 grid place-items-center">
                             <i wire:loading.remove wire:target="decrementCart('{{$item->rowId}}')" class="fa-solid fa-minus"></i>
                             <span wire:loading wire:target="decrementCart('{{$item->rowId}}')" class="animate-spin bg-transparent border-t-2 border-l-2 border-r-2 border-b-2 rounded-full w-4 h-4 border-gray-600 group-hover:border-white border-b-transparent group-hover:border-b-transparent"></span>
                         </button>
                     </div>
-                    <button wire:click.prevent="removeCart('{{$item->rowId}}')" class="text-white bg-red-500 active:bg-red-600 w-8 h-8 rounded-full text-sm grid place-items-center">
+                    <button wire:loading.attr="disabled" wire:click.prevent="removeCart('{{$item->rowId}}')" class="text-white bg-red-500 active:bg-red-600 w-8 h-8 rounded-full text-sm grid place-items-center">
                         <i wire:loading.remove wire:target="removeCart('{{$item->rowId}}')" class="fa-regular fa-trash-can"></i>
                         <span wire:loading wire:target="removeCart('{{$item->rowId}}')" class="animate-spin bg-transparent border-t-2 border-l-2 border-r-2 border-b-2 rounded-full w-4 h-4 border-white border-b-transparent group-hover:border-b-transparent"></span>
                     </button>

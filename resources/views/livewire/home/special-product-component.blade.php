@@ -6,7 +6,7 @@
             <img src="{{asset('img/box.png')}}" alt="" class="w-36">
         </div>
         @foreach($specialProducts as $product)
-            <a href="{{ route('shop.product',$product->id) }}" wire:key="{{$product->id}}" class="swiper-slide bg-white rounded-lg p-3 w-40 h-80 shrink-0">
+            <a href="{{ route('shop.product',$product->id) }}" wire:key="{{$product->id}}" class="swiper-slide bg-white rounded-lg p-3 w-40 min-h-80 h-fit shrink-0">
                 <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                 <figure class="relative">
                     <img src="{{asset($product->img_thumb)}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
@@ -25,12 +25,11 @@
                     @else
                         <button wire:loading.attr="disabled" @click.prevent="showModal=true" wire:click.prevent="addToCart({{$product->id}},'{{$product->name}}',1,{{$product->price}})" class="group bg-white rounded-full border border-red-600 text-red-600 w-8 h-8 absolute bottom-3 right-3 grid place-items-center hover:bg-red-500 hover:text-white hover:border-white transition-all duration-200">
                             <i wire:loading.remove wire:target="addToCart({{$product->id}},'{{$product->name}}',1,{{$product->price}})" class="fa-solid fa-plus"></i>
-                            <!-- <i wire:loading wire:target="addToCart({{$product->id}},'{{$product->name}}',1,{{$product->price}})" class="fa-solid fa-spinner animate-spin grid place-items-center"></i> -->
                             <span wire:loading wire:target="addToCart({{$product->id}},'{{$product->name}}',1,{{$product->price}})" class="animate-spin bg-transparent border-t-2 border-l-2 border-r-2 border-b-2 rounded-full w-4 h-4 border-red-600 group-hover:border-white border-b-transparent group-hover:border-b-transparent"></span>
                         </button>
                     @endif
                 </figure>
-                <h3 class="text-sm font-bold text-gray-600 tracking-tight">{{$product->name}}</h3>
+                <h3 class="text-sm font-bold text-gray-600 tracking-tight truncate max-w-full">{{$product->name}}</h3>
                 @if($product->stock_status == App\Models\Product::AVAILABLE_PRODUCT)
                 <div class="flex gap-1 items-center my-1">
                     <i class="fa-regular fa-floppy-disk text-lg text-teal-500 grid place-items-center"></i>
@@ -54,8 +53,8 @@
                 <div class="text-xs line-through text-left py-1 ml-6 text-gray-400 ">
                     {{number_format($product->price)}} 
                 </div>
-                <div class="text-xs text-gray-400 text-left">
-                    06:34:10
+                <div class="text-xs text-gray-400 text-left" wire:poll.1000ms="calculateTime">
+                    {{$product->discount->remainingTimeMessage}}
                 </div>
             </a>
         @endforeach
@@ -175,14 +174,14 @@
 
     <!-- Products for Any other -->
     <div class="hidden md:block container m-auto px-4">
-        <div class="swiper relative" id="specialSlider">
-            <div class="swiper-wrapper">
+        <div wire:ignore.self class="swiper relative" id="specialSlider">
+            <div wire:ignore.self class="swiper-wrapper">
                 <div class="swiper-slide flex flex-col items-center justify-center w-40 shrink-0">
                     <img src="{{asset('img/Amazings.svg')}}" alt="" class="w-28">
                     <img src="{{asset('img/box.png')}}" alt="" class="w-36">
                 </div>
                 @foreach($specialProducts as $product)
-                    <a href="{{ route('shop.product',$product->id) }}" wire:key="{{$product->id}}" class="swiper-slide bg-white rounded-lg p-3 w-40 h-80 shrink-0">
+                    <a href="{{ route('shop.product',$product->id) }}" wire:key="{{$product->id}}" class="swiper-slide bg-white rounded-lg p-3 w-40 min-h-80 h-fit shrink-0">
                         <p class="text-rose-500 text-xs font-semibold py-1">شگفت انگیز اختصاصی اپ</p>
                         <figure class="relative">
                             <img src="{{asset($product->img_thumb)}}" alt="" class="rounded-lg w-36 h-32 object-cover my-1">
@@ -205,7 +204,7 @@
                                 </button>
                             @endif
                         </figure>
-                        <h3 class="text-sm font-bold text-gray-600 tracking-tight">{{$product->name}}</h3>
+                        <h3 class="text-sm font-bold text-gray-600 tracking-tight truncate max-w-full">{{$product->name}}</h3>
                         @if($product->stock_status == App\Models\Product::AVAILABLE_PRODUCT)
                         <div class="flex gap-1 items-center my-1">
                             <i class="fa-regular fa-floppy-disk text-lg text-teal-500 grid place-items-center"></i>
@@ -230,7 +229,7 @@
                             {{number_format($product->price)}} 
                         </div>
                         <div class="text-xs text-gray-400 text-left">
-                            06:34:10
+                            {{$product->discount->remainingTimeMessage}}
                         </div>
                     </a>
                 @endforeach

@@ -49,7 +49,22 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="relative group flex"><a href="#" class="px-3 py-2 text-gray-500 hover:text-gray-800 transition-all duration-200">مقالات</a></li>
+                    <li class="relative group flex"><a href="#" class="px-3 py-2 text-gray-500 hover:text-gray-800 transition-all duration-200">پست ها</a>
+                        <ul class="w-52 flex flex-col absolute text-sm right-0 bg-white border border-gray-200 rounded-lg py-3 opacity-0 invisible top-[110%] group-hover:top-full group-hover:opacity-100 group-hover:visible transition-all duration-100 delay-100 text-gray-600">
+                            <li class="flex">
+                                <a href="{{ route('post.create') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">افزودن پست</a>
+                            </li>
+                            <li class="flex">
+                                <a href="{{ route('post.index') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">همه پست ها</a>
+                            </li>
+                            <li class="flex">
+                                <a href="{{ route('post-category.create') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">افزودن دسته بندی</a>
+                            </li>
+                            <li class="flex">
+                                <a href="{{ route('post-category.index') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">همه دسته بندی ها</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="relative group flex"><a href="#" class="px-3 py-2 text-gray-500 hover:text-gray-800 transition-all duration-200">فروشگاه</a></li>
                 </ul>
             </nav>

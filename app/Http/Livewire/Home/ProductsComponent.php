@@ -15,7 +15,7 @@ class ProductsComponent extends Component
     protected $listeners = ['update-cart' => 'render'];
 
     public function mount() {
-        $this->products = Product::with('discount')->orderBy('created_at', 'DESC')->get();
+        $this->products = Product::orderBy('created_at', 'DESC')->with('discount')->limit(12)->get();
         $this->cart = Cart::content();
         foreach($this->products as $key => $item) {
             $cartItem = $this->cart->where('id',$item->id)->first();
@@ -26,14 +26,13 @@ class ProductsComponent extends Component
 
     public function render()
     {
-        $cart = Cart::content();
         $this->cart = Cart::content();
         foreach($this->products as $key => $item) {
             $cartItem = $this->cart->where('id',$item->id)->first();
             $item->cartItem = $cartItem;
             $this->products[$key] = $item;
         }
-        return view('livewire.home.products-component',compact('cart'));
+        return view('livewire.home.products-component');
     }
 
     public function addToCart($id, $name, $qty, $price) {
