@@ -34,9 +34,11 @@
                 @click="showCart = true"
                 class="relative bg-sky-50 text-sky-600 text-lg rounded-xl w-12 h-12 grid place-items-center"
             >
+            @if($cartCount && $cartCount > 0)
                 <span class="animate-bounce bg-rose-500 font-semibold w-5 h-5 rounded-full text-xs text-white grid place-items-center absolute -top-0 -right-1 ring-4 ring-white">
-                    @livewire('shop.cart-counter')
+                    {{$cartCount}}
                 </span>
+            @endif
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
             @auth

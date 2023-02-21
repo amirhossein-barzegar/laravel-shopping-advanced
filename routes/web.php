@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -217,7 +217,11 @@ Route::get('variant-value/{id}/variant-type', function($id) {
 use App\Http\Livewire\Shop\ProductComponent;
 use App\Http\Livewire\Shop\ProductCategoryComponent;
 use App\Http\Livewire\Post\PostComponent;
+use App\Http\Livewire\Shop\ShopComponent;
+use App\Http\Livewire\Home\HomeComponent;
 
+Route::get('/',HomeComponent::class)->name('home');
+Route::get('/shop', ShopComponent::class)->name('shop');
 Route::get('/shop/{id}', ProductComponent::class)->name('shop.product');
 Route::get('/product-category/{slug}', ProductCategoryComponent::class)->name('shop.product.category');
 Route::get('/posts/{slug}', PostComponent::class)->name('post');
@@ -238,6 +242,7 @@ Route::middleware('adminaccess')->prefix('admin')->group(function() {
         return view('admin.dashboard');
     })->name('admin.dashboard');
     Route::resource('product', ProductController::class);
+    Route::delete('product', [ProductController::class, 'destroyAll'])->name('product.destroyAll');
     Route::resource('brand', BrandController::class);
     Route::resource('product-category', ProductCategoryController::class);
     Route::resource('discount', DiscountController::class);

@@ -58,11 +58,11 @@
                 <span class="tracking-[-0.1em] text-xs">تومان</span>            
             </div>
             <div class="text-xs line-through text-left py-1 ml-6 text-gray-400 ">
-                {{ $product->price }}
+                {{number_format($product->price)}}
             </div>
             @else 
             <div class="text-md text-left font-[500] tracking-tight text-gray-600" x-text="$wire.discountPrice">
-                {{$product->price}}
+                {{number_format($product->price)}}
                 <span class="tracking-[-0.1em] text-xs">تومان</span>
             </div>
             @endif

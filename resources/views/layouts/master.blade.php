@@ -20,7 +20,7 @@
         @livewireStyles
     </head>
     <body class="bg-zinc-50">
-        @include('layouts.partials.header')
+        @livewire('partials.header-component')
         <main class="mt-16">
             {{ $slot }}
         </main>
@@ -31,35 +31,35 @@
         <script src="{{ asset('js/price_range_script.js') }}"></script>
         <script src="{{ asset('js/xzoom.js') }}"></script>
         <script>
-            // window.addEventListener('contentChanged', event => {
-            //     intializeScripts();
-            // });
+            window.addEventListener('contentChanged', event => {
+                intializeScripts();
+            });
 
             function intializeScripts() {
                 const topSlider = new Swiper('#topSlider', {
-                // Optional parameters
-                loop: true,
-                breakpointsBase: 'container',
-                breakpoints: {
-                    0: {
-                        slidesPerView: 1,
-                        spaceBetween: 0,
+                    // Optional parameters
+                    loop: true,
+                    breakpointsBase: 'container',
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 0,
+                        },
+                        992: {
+                            slidesPerView: 2,
+                            spaceBetween: 0,
+                        }
                     },
-                    992: {
-                        slidesPerView: 2,
-                        spaceBetween: 0,
-                    }
-                },
-                autoplay: {
-                    delay: 4000,
-                },
-                speed: 500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-                // If we need pagination
-                pagination: {
-                    el: '#topSliderPaginate',
-                },
+                    autoplay: {
+                        delay: 4000,
+                    },
+                    speed: 500,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                    // If we need pagination
+                    pagination: {
+                        el: '#topSliderPaginate',
+                    },
                 });
 
                 const specialSlider = new Swiper('#specialSlider', {
@@ -88,10 +88,44 @@
                     },
                     disableOnInteraction: false,
                     pauseOnMouseEnter: false,
+                    loop: false,
                     // Navigation arrows
                     navigation: {
                         nextEl: '#specialSliderBtnLeft',
                         prevEl: '#specialSliderBtnRight',
+                    },
+                });
+
+                const brandsSlider = new Swiper('#brandsSlider', {
+                    // Optional parameters
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 15,
+                        },
+                        992: {
+                            slidesPerView: 4,
+                            spaceBetween: 15,
+                        },
+                        1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 15,
+                        },
+                        1280: {
+                            slidesPerView: 6,
+                            spaceBetween: 15,
+                        },
+                        1536: {
+                            slidesPerView: 7,
+                            spaceBetween: 15,
+                        }
+                    },
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '#brandsSliderBtnLeft',
+                        prevEl: '#brandsSliderBtnRight',
                     },
                 });
 

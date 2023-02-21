@@ -29,6 +29,7 @@ class BrandRequest extends FormRequest
                     'name' => 'min:3|max:50|string',
                     'description' => 'nullable|min:10',
                     'slug' => 'alpha_dash|unique:brands|min:3',
+                    'img_thumb' => 'nullable|image',
                     'site_url' => 'nullable|url'
                 ];
             break;
@@ -38,6 +39,7 @@ class BrandRequest extends FormRequest
                     'name' => 'min:3|max:50|string',
                     'description' => 'nullable|min:10',
                     'slug' => 'alpha_dash|min:3',
+                    'img_thumb' => 'nullable|image',
                     'site_url' => 'nullable|url'
                 ];
             break;

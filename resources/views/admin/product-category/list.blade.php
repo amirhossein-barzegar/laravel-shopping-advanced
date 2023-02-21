@@ -41,6 +41,9 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3">
+                                تصویر دسته بندی
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 لینک دسته بندی
                             </th>
                             <th scope="col" class="px-6 py-3">

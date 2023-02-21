@@ -31,10 +31,20 @@
                         نمای کلی از تمام محصولات مشاهده کنید.
                     </p>
                 </div>
-                <a href="{{ route('product.create') }}" class="flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 transition-colors duration-150 text-white text-xs px-4 py-2 rounded-lg">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>افزودن محصول جدید</span>
-                </a>
+                <div class="flex flex-col gap-4">
+                    <a href="{{ route('product.create') }}" class="flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 transition-colors duration-150 text-white text-xs px-4 py-2 rounded-lg">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>افزودن محصول جدید</span>
+                    </a>
+                    <form action="{{ route('product.destroyAll') }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button @click="showModal = true" class="flex w-full items-center justify-center gap-2 bg-red-500 hover:bg-red-600 transition-colors duration-150 text-white text-xs px-4 py-2 rounded-lg">
+                            <i class="fa-solid fa-trash-can"></i>
+                            <span>حذف همه</span>
+                        </button>
+                    </form>
+                </div>
             </div>
             <div class="relative overflow-x-auto sm:rounded-lg">
                 <table class="w-full text-sm text-right text-gray-500">
@@ -81,7 +91,7 @@
                                 {{$product->quantity}}
                             </td>
                             <td class="px-6 py-4 max-w-[120px] truncate">
-                                @empty(!$product->discount)
+                                @empty(!$product->productCategory)
                                 {{$product->productCategory->name}}
                                 @endempty
                             </td>
@@ -118,7 +128,9 @@
                         @empty 
                         <tr>
                             <td>
+                                <div class="px-4 py-3 text-xs text-red-600">
                                 هیچ محصولی یافت نشد
+                                </div>
                             </td>
                         </tr>
                         @endforelse

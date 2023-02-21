@@ -42,10 +42,10 @@
                         <a href="" class="px-3 py-2 text-gray-500 hover:text-gray-800 transition-all duration-200">برند ها</a>
                         <ul class="w-52 flex flex-col absolute text-sm right-0 bg-white border border-gray-200 rounded-lg py-3 opacity-0 invisible top-[110%] group-hover:top-full group-hover:opacity-100 group-hover:visible transition-all duration-100 delay-100 text-gray-600">
                             <li class="flex">
-                                <a href="{{ route('product.create') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">افزودن برند</a>
+                                <a href="{{ route('brand.create') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">افزودن برند</a>
                             </li>
                             <li class="flex">
-                                <a href="{{ route('product.index') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">همه برند ها</a>
+                                <a href="{{ route('brand.index') }}" class="w-full px-4 py-2 hover:bg-gray-50 transition-colors duration-200">همه برند ها</a>
                             </li>
                         </ul>
                     </li>
@@ -93,6 +93,11 @@
                 <span class="bg-green-600 font-semibold w-3 h-3 rounded-full text-xs text-white grid place-items-center absolute top-0 right-0 ring-4 ring-white"></span>
                 <i class="fa-solid fa-user"></i>
                 <ul class="flex flex-col w-36 text-center text-sm  border border-pink-200 py-3 rounded-xl absolute left-0 top-[110%] group-hover:top-full opacity-0 invisible bg-white group-hover:opacity-100 group-hover:visible transition-all delay-100 duration-100">
+                    <li class="flex">
+                        <a href="{{ url('/') }}" class="w-full py-2 hover:bg-pink-50 transition-colors duration-200">
+                            برو به سایت
+                        </a>
+                    </li>
                     <li class="flex">
                         <a href="#" class="w-full py-2 hover:bg-pink-50 transition-colors duration-200">
                             پروفایل

@@ -106,7 +106,7 @@
                     <select id="category" name="category_id" class="px-4 py-2 outline-none bg-left bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200">
                         <option value selected>بدون دسته بندی</option>
                     @foreach($productCategories as $category)
-                        <option value="{{ $category->id }}" {{ $product->category && $category->id === $product->productCategory->id ? 'selected':''}}>{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{ $product->productCategory && $category->id === $product->productCategory->id ? 'selected':''}}>{{ $category->name }}</option>
                     @endforeach
                     </select>
                 </div>

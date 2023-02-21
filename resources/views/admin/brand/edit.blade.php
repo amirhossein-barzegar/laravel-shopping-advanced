@@ -51,6 +51,16 @@
                     <x-input-error :messages="$errors->get('slug')"/>
                 </div>
                 <div class="flex flex-col gap-1 mt-2 ">
+                    <label for="img_thumb" class="text-sm font-medium text-gray-900">تصویر شاخص برند : </label>
+                    <input type="file" value="{{ old('img_thumb') }}" name="img_thumb" id="img_thumb" class="outline-none py-2 text-sm text-gray-900 border border-gray-200 rounded-lg cursor-pointer bg-gray-50 focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200" aria-describedby="file_input_help">
+                    <x-input-error :messages="$errors->get('img_thumb')"/>
+                    @if ($brand->img_thumb)
+                    <div class="flex overflow-x-auto mx-auto">
+                        <img src="{{ asset($brand->img_thumb) }}" alt="" class="h-20 m-auto">
+                    </div>
+                    @endif
+                </div>
+                <div class="flex flex-col gap-1 mt-2 ">
                     <label for="site_url" class="text-sm font-medium text-gray-900">لینک سایت برند : </label>
                     <input type="text" value="{{ $brand->site_url }}" name="site_url" placeholder="مثلا: https://example.com" id="site_url" class="outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-gray-200 transition-all duration-200">
                     <x-input-error :messages="$errors->get('site_url')"/>

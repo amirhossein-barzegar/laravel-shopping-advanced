@@ -41,6 +41,9 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3">
+                                تصویر برند
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 نام برند
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -60,6 +63,9 @@
                     <tbody>
                         @forelse($brands as $brand)
                         <tr class="bg-white {{$loop->last ? '': 'border-b'}}">
+                            <th scope="row" class="max-w-[120px] truncate px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                <img src="{{ asset($brand->img_thumb) }}" alt="" class="h-16">
+                            </th>
                             <th scope="row" class="max-w-[120px] truncate px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 {{$brand->name}}
                             </th>
@@ -90,9 +96,9 @@
                         </tr>
                         @empty 
                         <tr>
-                            <td>
+                            <div class="px-4 py-3 text-xs text-red-600">
                                 هیچ برندی یافت نشد
-                            </td>
+                            </div>
                         </tr>
                         @endforelse
                     </tbody>

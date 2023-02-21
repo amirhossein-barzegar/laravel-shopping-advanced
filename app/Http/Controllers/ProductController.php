@@ -186,7 +186,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
-        if ($product->img_thumb) {
+        if (file_exists($product->img_thumb)) {
             unlink($product->img_thumb);
         }
         if ($product->img_gallery) {
@@ -200,5 +200,24 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('product.index')->with('success','محصول با موفقیت حذف گردید!');
+    }
+
+    public function destroyAll() {
+        $products = Product::all();
+        foreach($products as $product) {
+            if (file_exists($product->img_thumb)) {
+                unlink($product->img_thumb);
+            }
+            if ($product->img_gallery) {
+                $img_gallery = explode(',',$product->img_gallery);
+                foreach($img_gallery as $img) {
+                    if(file_exists($img)) {
+                        unlink($img);
+                    }
+                }
+            }
+            $product->delete();
+        }
+        return redirect()->route('product.index')->with('success','تمام محصولات با موفقیت حذف گردید!');
     }
 }
